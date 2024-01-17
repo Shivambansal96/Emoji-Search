@@ -75,6 +75,7 @@ body {
     height: 100px;
     width: 100px;
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     background-color: red;
@@ -84,6 +85,17 @@ body {
     font-size: 40px;
     animation: myAnime infinite infinite;
 
+}
+
+
+
+.emoji:hover {
+    /* animation: myAnime infinite infinite; */
+    transition-duration: 3s;
+    transform: scale(2);
+    cursor: pointer;
+    transform: scale(2);
+    margin-left: 20px;
 }
 
 @keyframes myAnime {
@@ -96,14 +108,14 @@ body {
     }
 }
 
-.emoji:hover {
-    animation: myAnime infinite infinite;
-    transition-duration: 5s;
-    /* transform: scale(2); */
-}
-
 .aliases {
     font-size: 20px;
+}
+
+.aliases:hover {
+    color: blue;
+
+    
 }
 
 .desc {
@@ -111,6 +123,8 @@ body {
 }
 
 .desc:hover {
-    transform: scale(2);
+    font-style: italic;
+    color: red;
+    transform: scale(1.2);
 
 }

@@ -105,7 +105,8 @@ function displayResult(searchQuery= ""){
         new_aliases.innerText = e.aliases;
         new_desc.innerText = e.description;
 
-        new_row.classList.add("emoji");
+        // new_row.classList.add("box");
+        new_emoji.classList.add("emoji");
         new_desc.classList.add("desc");
         new_aliases.classList.add("aliases");
 
