@@ -3,17 +3,38 @@ function searchEmoji() {
 
     // console.log(inputValue);
     displayResult(inputValue);
-
+    
+    // return false;
 
 }
 
 
-function displayResult() {
+function displayResult(searchQuery = "") {
 
-    let parent = document.querySelector("#Search_result_container");
+    let filteredData = emojiList.filter((e) => {
+        if(e.description.indexOf(searchQuery) != -1) {
+            return true;
+        }
+            
+        if(e.tags.some(elem=>elem.startsWith(searchQuery))) {
+            return true;
+        }
+
+        if(e.aliases.some(elem=>elem.startsWith(searchQuery))){
+            return true;
+        }
+
+        // if(e.category.some(elem => elem.startsWith(searchQuery))) 
+        //     return true;
+    })
+
+    // console.log(filteredData);
+
+    let parent = document.querySelector("#search_result_container");
     // console.log(parent);
+    parent.innerHTML = "";
 
-    emojiList.forEach((e) => {  
+    filteredData.forEach((e) => {  
 
     let new_row = document.createElement("tr");
     let new_emoji = document.createElement("td");
@@ -34,6 +55,6 @@ function displayResult() {
 
 // console.log(emojiList);
 
-document.querySelector("#search_field").addEventListener("keyup", searchEmoji);
+document.getElementById("search_field").addEventListener("keyup", searchEmoji);
 
 window.onload = () => displayResult();
