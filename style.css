@@ -114,7 +114,7 @@ body {
 
 .aliases:hover {
     color: blue;
-
+    text-align: center;
     
 }
 
@@ -126,5 +126,7 @@ body {
     font-style: italic;
     color: red;
     transform: scale(1.2);
+    text-align: center;
+
 
 }
